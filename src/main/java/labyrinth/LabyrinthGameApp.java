@@ -9,10 +9,9 @@ import javafx.stage.Stage;
 
 public class LabyrinthGameApp extends Application {
 
-
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/game.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/home.fxml"));
         stage.setTitle("Labyrinth Game");
         Scene scene = new Scene(root);
         stage.setScene(scene);

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane id="border" fx:id="border" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../game.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.GameController">
+   <center>
+      <GridPane id="board" fx:id="board" alignment="BASELINE_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="720.0" prefWidth="720.0" styleClass="game-grid" stylesheets="@../game.css">
+        <columnConstraints>
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="80.0" prefWidth="80.0" />
+        </columnConstraints>
+      
+        <rowConstraints>
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="80.0" prefHeight="80.0" vgrow="ALWAYS" />
+        </rowConstraints>
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="10.0" right="30.0" top="10.0" />
+         </BorderPane.margin>
+      </GridPane>
+   </center>
+   <padding>
+      <Insets top="5.0" />
+   </padding>
+   <left>
+      <VBox alignment="CENTER" prefHeight="849.0" prefWidth="300.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" />
+         </BorderPane.margin>
+         <children>
+            <JFXButton onAction="#handleOnButtonAction" styleClass="button-raised" text="RESET">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="25.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton layoutX="35.0" layoutY="60.0" styleClass="button-raised" text="Leaderboards">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="25.0" />
+               </VBox.margin>
+            </JFXButton>
+            <JFXButton layoutX="10.0" layoutY="141.0" onAction="#handleExitButton" styleClass="button-raised" text="Exit">
+               <VBox.margin>
+                  <Insets left="25.0" right="25.0" top="25.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Label fx:id="timerui" alignment="CENTER" textAlignment="CENTER">
+               <font>
+                  <Font name="Videophreak" size="40.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <VBox.margin>
+                  <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
+               </VBox.margin>
+            </Label>
+            <Label fx:id="finalscoreUI" alignment="CENTER" textAlignment="CENTER">
+               <font>
+                  <Font name="Videophreak" size="40.0" />
+               </font>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </Label>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <ImageView fitHeight="150.0" fitWidth="508.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+         <image>
+            <Image url="@../laby.png" />
+         </image>
+         <BorderPane.margin>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </BorderPane.margin>
+      </ImageView>
+   </top>
+   <right>
+      <MediaView fx:id="mvLogo" fitHeight="100.0" fitWidth="100.0" BorderPane.alignment="CENTER" />
+   </right>
+</BorderPane>

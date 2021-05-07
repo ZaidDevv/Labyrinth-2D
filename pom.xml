@@ -16,6 +16,7 @@
     </developers>
 
     <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>16.0.1</maven.compiler.source>
         <maven.compiler.target>16.0.1</maven.compiler.target>
         <exec.mainClass>labyrinth.Main</exec.mainClass>
@@ -42,6 +43,13 @@
             <version>${javafx.version}</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-media</artifactId>
+            <version>11.0.1</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>
@@ -49,10 +57,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <configuration>
-                    <source>16.0.1</source>
-                    <target>16.0.1</target>
-                </configuration>
+                <version>3.8.1</version>
             </plugin>
 
             <plugin>
