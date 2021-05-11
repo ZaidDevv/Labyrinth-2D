@@ -1,23 +1,15 @@
 package labyrinth.model;
-import javafx.beans.InvalidationListener;
 import javafx.beans.property.DoubleProperty;
-import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleDoubleProperty;
-import javafx.beans.property.SimpleIntegerProperty;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.scene.layout.ColumnConstraints;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
 public class GameBoardModel {
-    public final int BOARD_SIZE = 9;
+    public final int BOARD_SIZE = 12;
     private Cell[][] board = new Cell[BOARD_SIZE][BOARD_SIZE];
     private Stack<Cell> cellStack;
-    private Cell currentCell;
     private Cell gameCell;
     private Cell goalCell;
     private int steps;
@@ -52,7 +44,7 @@ public class GameBoardModel {
         setOutcome(false);
         steps = 0;
         finalScore = new SimpleDoubleProperty();
-        cellStack = new Stack<Cell>();
+        cellStack = new Stack<>();
         initializeBoard();
         gameCell = board[0][0];
         generateMaze();
@@ -81,7 +73,7 @@ public class GameBoardModel {
     }
 
     public boolean canMoveUp(Cell cell){
-        if(cell.getWalls()[0] == true){
+        if(cell.getWalls()[0]){
             return false;
         }
         else if (cell.getRow() - 1 < 0){
@@ -91,7 +83,7 @@ public class GameBoardModel {
     }
 
     public boolean canMoveRight(Cell cell){
-        if(cell.getWalls()[1] == true){
+        if(cell.getWalls()[1]){
             return false;
         }
         else if (cell.getCol() + 1 > BOARD_SIZE - 1){
@@ -100,7 +92,7 @@ public class GameBoardModel {
         return true;
     }
     public boolean canMoveDown(Cell cell){
-        if(cell.getWalls()[2] == true){
+        if(cell.getWalls()[2]){
             return false;
         }
         else if (cell.getRow() + 1 > BOARD_SIZE - 1){
@@ -109,13 +101,10 @@ public class GameBoardModel {
         return true;
     }
     public boolean canMoveLeft(Cell cell){
-        if(cell.getWalls()[3] == true){
+        if(cell.getWalls()[3]){
             return false;
         }
-        else if (cell.getCol() - 1 < 0){
-            return false;
-        }
-        return true;
+        else return cell.getCol() - 1 >= 0;
     }
 
     public void moveUp(){
@@ -163,8 +152,7 @@ public class GameBoardModel {
 
         Random r = new Random();
         if(!neighbours.isEmpty()) {
-            Cell randomCell = neighbours.get(r.nextInt(neighbours.size()));
-            return randomCell;
+            return neighbours.get(r.nextInt(neighbours.size()));
         }
 
         return new Cell(true);
@@ -178,7 +166,7 @@ public class GameBoardModel {
     }
 
     public void generateMaze(){
-        currentCell = board[0][0];
+        Cell currentCell = board[0][0];
         currentCell.setVisited(true);
         cellStack.push(currentCell);
         while(!cellStack.empty()){

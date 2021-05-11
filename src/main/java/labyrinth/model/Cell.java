@@ -5,7 +5,7 @@ package labyrinth.model;
 public class Cell {
     private int row;
     private int col;
-    private final double width = 80;
+    private final double width = 50;
     private Boolean[] walls = {true,true,true,true};
     private Boolean visited = false;
     private boolean invalidCell = false;

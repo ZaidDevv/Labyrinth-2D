@@ -39,6 +39,7 @@ public class HomeController {
         if(file != null) {
             initMediaPlayer(file);
         }
+        playerName.setFocusTraversable(false);
     }
 
     public void initMediaPlayer(File file){
@@ -56,7 +57,6 @@ public class HomeController {
 
     @FXML
     public void handlePlayButton(ActionEvent actionEvent) throws IOException {
-        System.out.println(playerName.getText());
         if(playerName.getText().isEmpty()){
             playerNameMissing.setText("Please Don't leave the name field blank!");
         }

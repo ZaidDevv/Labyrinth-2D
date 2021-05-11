@@ -1,7 +1,5 @@
 package labyrinth.controllers;
 import com.jfoenix.controls.JFXButton;
-import com.jfoenix.controls.JFXTextArea;
-import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
 import javafx.application.Platform;
 import javafx.beans.property.DoubleProperty;
@@ -14,18 +12,11 @@ import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.*;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
 import labyrinth.model.Cell;
 import labyrinth.model.GameBoardModel;
-
-import java.io.File;
-import java.util.Timer;
-import java.util.TimerTask;
 
 
 public class GameController {
@@ -194,6 +185,7 @@ public class GameController {
     public void handleKeyPressed(KeyEvent keyEvent) {
         KeyCode key = keyEvent.getCode();
         Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol(),board);
+        System.out.println(model.getSteps());
         switch(key){
             case A: {
                 if(model.canMoveLeft(model.getGameCell())){
@@ -235,13 +227,14 @@ public class GameController {
                 }
                 break;
             }
+
         }
 
 
 
         if(model.hasFinished()){
             System.out.println("Congratulations You Win!");
-            model.getFinalScore().set((1/timeTaken.get() + 1/model.getSteps()) * 4000);
+            model.getFinalScore().set((1/timeTaken.get() * 65 + 1/model.getSteps() * 35) * 100);
             displayScore();
         }
 
@@ -271,7 +264,7 @@ public class GameController {
     }
 
     public void displayScore(){
-        finalscoreUI.setText(String.valueOf(String.valueOf(Math.round(model.getFinalScore().getValue()))));
+        finalscoreUI.setText("SCORE : " + String.valueOf(String.valueOf(Math.round(model.getFinalScore().getValue()))));
     }
     @FXML
     public void handleExitButton(ActionEvent actionEvent){
