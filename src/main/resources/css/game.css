@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'Videophreak';
-    src: url('VIDEOPHREAK.ttf');
+    font-family: 'VIDEOPHREAK';
+    src: url('fonts/VIDEOPHREAK.ttf');
 }
 
 .game-grid {
@@ -24,12 +24,13 @@
 }
 
 .button-raised{
-    -fx-font-family: "Videophreak";
+    -fx-font-family: 'VIDEOPHREAK';
     -fx-padding: 0.7em 0.57em;
     -fx-font-size: 20px;
     -jfx-button-type: RAISED;
     -fx-background-color: rgb(5,5,5);
     -fx-pref-width: 200;
     -fx-text-fill: WHITE;
+
 }
 

@@ -8,9 +8,9 @@
 <?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane id="border" fx:id="border" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../game.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.GameController">
+<BorderPane id="border" fx:id="border" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../css/game.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.GameController">
    <center>
-      <GridPane id="board" fx:id="board" alignment="BASELINE_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="600.0" prefWidth="600.0" styleClass="game-grid" stylesheets="@../game.css">
+      <GridPane id="board" fx:id="board" alignment="BASELINE_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="600.0" prefWidth="600.0" styleClass="game-grid" stylesheets="@../css/game.css">
         <columnConstraints>
             <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
             <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="100.0" />
@@ -54,12 +54,12 @@
             <Insets bottom="5.0" left="5.0" right="5.0" />
          </BorderPane.margin>
          <children>
-            <JFXButton onAction="#handleOnButtonAction" styleClass="button-raised" text="RESET">
+            <JFXButton onAction="#handleResetButton" styleClass="button-raised" text="RESET">
                <VBox.margin>
                   <Insets left="25.0" right="25.0" top="25.0" />
                </VBox.margin>
             </JFXButton>
-            <JFXButton layoutX="35.0" layoutY="60.0" styleClass="button-raised" text="Leaderboards">
+            <JFXButton fx:id="LeaderboardsBtn" layoutX="35.0" layoutY="60.0" onAction="#handleLeaderboardsButton" styleClass="button-raised" text="Leaderboards">
                <VBox.margin>
                   <Insets left="25.0" right="25.0" top="25.0" />
                </VBox.margin>
@@ -69,7 +69,7 @@
                   <Insets left="25.0" right="25.0" top="25.0" />
                </VBox.margin>
             </JFXButton>
-            <Label fx:id="timerui" alignment="CENTER" textAlignment="CENTER">
+            <Label fx:id="timerui" alignment="CENTER" textAlignment="CENTER" textFill="WHITE">
                <font>
                   <Font name="Videophreak" size="40.0" />
                </font>
@@ -94,7 +94,7 @@
    <top>
       <ImageView fitHeight="200.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
          <image>
-            <Image url="@../Labyrinth.png" />
+            <Image url="@../assets/Labyrinth.png" />
          </image>
          <BorderPane.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

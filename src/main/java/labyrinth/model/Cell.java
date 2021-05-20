@@ -1,5 +1,8 @@
 package labyrinth.model;
 
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
+
 @lombok.Data
 @lombok.RequiredArgsConstructor
 public class Cell {

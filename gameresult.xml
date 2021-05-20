@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<position>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>123123</name>
+        <startDateTime>May 20, 2021 at 6:06:06 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>asd</name>
+        <startDateTime>May 20, 2021 at 6:06:15 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>sda</name>
+        <startDateTime>May 20, 2021 at 6:06:18 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>1</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>ds</name>
+        <startDateTime>May 20, 2021 at 6:06:21 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>dasdasd</name>
+        <startDateTime>May 20, 2021 at 6:06:23 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>asd</name>
+        <startDateTime>May 20, 2021 at 6:06:25 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>d</name>
+        <startDateTime>May 20, 2021 at 6:08:30 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>24</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>ss</name>
+        <startDateTime>May 20, 2021 at 6:13:00 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>asd</name>
+        <startDateTime>May 20, 2021 at 6:19:26 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>8</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>asd</name>
+        <startDateTime>May 20, 2021 at 6:29:09 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>asd</name>
+        <startDateTime>May 20, 2021 at 6:36:19 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>96</steps>
+        <finalScore>52.08333333333333</finalScore>
+        <outcome>true</outcome>
+        <name>asdasd</name>
+        <startDateTime>May 20, 2021 at 9:07:13 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>aew</name>
+        <startDateTime>May 20, 2021 at 9:07:31 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>asd</name>
+        <startDateTime>May 20, 2021 at 10:03:35 AM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>8</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>true</outcome>
+        <name>awd</name>
+        <startDateTime>May 20, 2021 at 10:14:07 AM GMT+02:00</startDateTime>
+    </result>
+</position>

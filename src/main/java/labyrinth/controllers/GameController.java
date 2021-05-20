@@ -7,7 +7,10 @@ import javafx.beans.property.SimpleDoubleProperty;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -15,8 +18,15 @@ import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
+import javafx.stage.Stage;
+import labyrinth.jaxb.GameResult;
+import labyrinth.jaxb.ResultsHandler;
 import labyrinth.model.Cell;
 import labyrinth.model.GameBoardModel;
+import java.io.*;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 
 public class GameController {
@@ -35,11 +45,14 @@ public class GameController {
     @FXML
     Label finalscoreUI;
 
-    final Cell referenceCell = new Cell();
-    DoubleProperty timeTaken = new SimpleDoubleProperty();
-    private long startTime = System.nanoTime();
-    GameBoardModel model;
+    private final Cell referenceCell = new Cell();
+    private DoubleProperty timeTaken = new SimpleDoubleProperty();
+    private long startTime;
+    private GameBoardModel model = new GameBoardModel();
     private Circle piece;
+    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG);
+    private GameResult finalResult = new GameResult();
+    private double finalScore;
 
 
     AnimationTimer timer = new AnimationTimer() {
@@ -63,7 +76,9 @@ public class GameController {
         drawWalls();
         initGoalState();
         createGamePiece();
+        startTime = System.nanoTime();
         initTimer(timer);
+        board.requestFocus();
     }
 
     private void initTimer(AnimationTimer timer){
@@ -185,7 +200,6 @@ public class GameController {
     public void handleKeyPressed(KeyEvent keyEvent) {
         KeyCode key = keyEvent.getCode();
         Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol(),board);
-        System.out.println(model.getSteps());
         switch(key){
             case A: {
                 if(model.canMoveLeft(model.getGameCell())){
@@ -234,13 +248,14 @@ public class GameController {
 
         if(model.hasFinished()){
             System.out.println("Congratulations You Win!");
-            model.getFinalScore().set((1/timeTaken.get() * 65 + 1/model.getSteps() * 35) * 100);
+            finalScore = (((40/model.getMovesCount()+1) * 50) + (5/ timeTaken.get()+1)*50);
+            finalResult.setOutcome(true);
             displayScore();
         }
 
     }
 
-    public void resetGame(){
+    public void resetGameUI(){
         ObservableList<Node> boardChildren = board.getChildren();
         for(Node paneChild : boardChildren) {
             Pane currentPane = (Pane) paneChild;
@@ -255,20 +270,39 @@ public class GameController {
         }
     }
     @FXML
-    public void handleOnButtonAction(ActionEvent actionEvent) {
+    public void handleResetButton(ActionEvent actionEvent){
         startTime = System.nanoTime();
         Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol(), board);
         pane.getStyleClass().remove("visited-cell");
-        resetGame();
+        resetGameUI();
         initialize();
     }
 
     public void displayScore(){
-        finalscoreUI.setText("SCORE : " + String.valueOf(String.valueOf(Math.round(model.getFinalScore().getValue()))));
+        finalscoreUI.setText("SCORE : " + Math.round(model.getFinalScore()));
     }
+
     @FXML
     public void handleExitButton(ActionEvent actionEvent){
         Platform.exit();
+    }
+
+    @FXML
+    public void handleLeaderboardsButton(ActionEvent actionEvent) throws IOException {
+        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        GameResult result = (GameResult) stage.getUserData();
+        finalResult.setName(result.getName());
+        createResult();
+        Parent root = FXMLLoader.load(getClass().getResource("/fxml/Leaderboards.fxml"));
+        stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
+    public void createResult() {
+
+        new ResultsHandler().commitResult(finalResult.getName(), model.getMovesCount(),model.getFinalScore(),finalResult.isOutcome(), ZonedDateTime.now().format(dateTimeFormatter));
+
     }
 
 }

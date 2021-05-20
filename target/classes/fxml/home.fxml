@@ -7,16 +7,16 @@
 <?import javafx.scene.media.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../home.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.HomeController">
+<BorderPane fx:id="homeBP" focusTraversable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.HomeController">
    <center>
-      <VBox alignment="CENTER" maxHeight="700.0" maxWidth="800.0" styleClass="menu" stylesheets="@../home.css" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" maxHeight="700.0" maxWidth="800.0" styleClass="menu" stylesheets="@../css/home.css" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="15.0" left="5.0" right="6.0" />
          </BorderPane.margin>
          <children>
-            <TextField fx:id="playerName" maxHeight="40.0" maxWidth="600.0" prefHeight="40.0" promptText="Enter Your Name">
+            <TextField fx:id="playerName" alignment="CENTER" maxHeight="40.0" maxWidth="600.0" prefHeight="40.0" promptText="Enter Your Name">
                <font>
-                  <Font name="Videophreak" size="36.0" />
+                  <Font size="36.0" />
                </font>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
@@ -36,7 +36,7 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </Label>
-            <JFXButton fx:id="playButton" buttonType="RAISED" onAction="#handlePlayButton" styleClass="play-btn" stylesheets="@../home.css" text="Play" textFill="WHITE">
+            <JFXButton fx:id="playButton" buttonType="RAISED" onAction="#handlePlayButton" styleClass="play-btn" stylesheets="@../css/home.css" text="Play" textFill="WHITE">
                <font>
                   <Font name="Videophreak" size="36.0" />
                </font>
@@ -47,7 +47,6 @@
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
                </padding>
             </JFXButton>
-            <TilePane prefHeight="200.0" prefWidth="200.0" />
          </children></VBox>
    </center>
    <top>
