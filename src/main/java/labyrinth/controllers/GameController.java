@@ -52,7 +52,7 @@ public class GameController {
     private Circle piece;
     private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG);
     private GameResult finalResult = new GameResult();
-    private double finalScore;
+
 
 
     AnimationTimer timer = new AnimationTimer() {
