@@ -1,13 +1,22 @@
 package labyrinth.jaxb;
-
 import jakarta.xml.bind.JAXBException;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The class that governs the structure of JAXB output
+ */
+
 public class ResultsHandler {
+    /**
+     * {@code List} that holds all the {@code GameResult} objects
+     */
     private LeaderboardResults resultList = new LeaderboardResults();
 
+    /**
+     * Parameterless constructor that Initializes {@code resultList} and handles JAXB Output file creation
+     */
     public ResultsHandler(){
         File file = new File("gameresult.xml");
         if(file.exists()) {
@@ -15,23 +24,31 @@ public class ResultsHandler {
 
                 this.resultList = JAXBHelper.fromXML(LeaderboardResults.class, new FileInputStream("gameresult.xml"));
             }
-            catch (JAXBException  ex) {
-                ex.printStackTrace();
-            }
-            catch(FileNotFoundException ex){
+            catch (JAXBException | FileNotFoundException ex) {
                 ex.printStackTrace();
             }
         }
         else{
             try {
-                file.createNewFile();
+                if (file.createNewFile()) {
+
+                } else {
+
+                }
             } catch (IOException ioException) {
-                System.out.println("Directory Doesn't Exist");
+
             }
             resultList.setGameResultsList(new ArrayList<>());
         }
     }
 
+    /**
+     * @param name Player's name
+     * @param steps Amount of moves player has made
+     * @param finalScore Player's score
+     * @param outcome Result of the game (Solved/Given up)
+     * @param timeStampBegin date time of starting the game
+     */
     public void commitResult(String name, int steps, double finalScore, boolean outcome,String timeStampBegin){
         List<GameResult> results = resultList.getGameResultsList();
         results.add(new GameResult(steps,finalScore,outcome,name,timeStampBegin));
@@ -45,6 +62,9 @@ public class ResultsHandler {
 
     }
 
+    /**
+     * @return list of {@code GameResult}
+     */
     public List<GameResult> getGameResultsList() {
         return resultList.getGameResultsList();
     }

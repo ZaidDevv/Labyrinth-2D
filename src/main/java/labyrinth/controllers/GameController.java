@@ -1,3 +1,5 @@
+// CHECKSTYLE:OFF
+
 package labyrinth.controllers;
 import com.jfoenix.controls.JFXButton;
 import javafx.animation.AnimationTimer;
@@ -23,12 +25,15 @@ import labyrinth.jaxb.GameResult;
 import labyrinth.jaxb.ResultsHandler;
 import labyrinth.model.Cell;
 import labyrinth.model.GameBoardModel;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.Level;
 import java.io.*;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
+import java.util.logging.Logger;
 
-
+@Slf4j
 public class GameController {
     @FXML
     private GridPane board;
@@ -50,9 +55,9 @@ public class GameController {
     private long startTime;
     private GameBoardModel model = new GameBoardModel();
     private Circle piece;
-    private DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG);
+    private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG);
     private GameResult finalResult = new GameResult();
-
+    private final Logger logger = Logger.getLogger(GameController.class.getName());
 
 
     AnimationTimer timer = new AnimationTimer() {
@@ -92,7 +97,7 @@ public class GameController {
         piece.setFill(Color.BLUE);
         piece.setCenterX(referenceCell.getWidth()/2);
         piece.setCenterY(referenceCell.getWidth()/2);
-        Pane pane = (Pane) getNodeByRowColumnIndex(0, 0,board);
+        Pane pane = (Pane) getNodeByRowColumnIndex(0, 0);
         pane.getChildren().add(piece);
     }
 
@@ -104,7 +109,7 @@ public class GameController {
         goal.setStroke(Color.BLACK);
         goal.setCenterX(referenceCell.getWidth()/2);
         goal.setCenterY(referenceCell.getWidth()/2);
-        Pane pane = (Pane) getNodeByRowColumnIndex(model.getGoalCell().getRow(), model.getGoalCell().getCol(),board);
+        Pane pane = (Pane) getNodeByRowColumnIndex(model.getGoalCell().getRow(), model.getGoalCell().getCol());
         pane.getChildren().add(goal);
     }
 
@@ -128,7 +133,7 @@ public class GameController {
 
     }
 
-    private Node getNodeByRowColumnIndex (final int row, final int column, GridPane grid) {
+    private Node getNodeByRowColumnIndex (final int row, final int column) {
         Node result = null;
         ObservableList<Node> children = board.getChildren();
         for (Node node : children) {
@@ -150,9 +155,9 @@ public class GameController {
         for(int i = 0; i < model.BOARD_SIZE;i++){
             for(int j = 0 ; j < model.BOARD_SIZE; j++){
                 Boolean[] walls = boardState[i][j].getWalls();
-                Pane pane = (Pane) getNodeByRowColumnIndex(i,j,board);
-                    if (walls[0] == true) {
-                        Line l = new Line();
+                Pane pane = (Pane) getNodeByRowColumnIndex(i,j);
+                    if (walls[0]) {
+                        Line l = new Line(0,0,width,0);
                         l.setStrokeWidth(6);
                         l.setStartX(0);
                         l.setEndX(width);
@@ -162,32 +167,20 @@ public class GameController {
 
                     }
 
-                    if (walls[1] == true) {
-                        Line l = new Line();
+                    if (walls[1]) {
+                        Line l = new Line(width,0,width,width);
                         l.setStrokeWidth(6);
-                        l.setStartX(width);
-                        l.setEndX(width);
-                        l.setStartY(0);
-                        l.setEndY(width);
                         pane.getChildren().add(l);
                     }
-                    if (walls[2] == true) {
-                        Line l = new Line();
+                    if (walls[2]) {
+                        Line l = new Line(0,width,width,width);
                         l.setStrokeWidth(6);
-                        l.setStartX(0);
-                        l.setEndX(width);
-                        l.setStartY(width);
-                        l.setEndY(width);
                         pane.getChildren().add(l);
                     }
 
-                    if (walls[3] == true) {
-                        Line l = new Line();
+                    if (walls[3]) {
+                        Line l = new Line(0,0,0,width);
                         l.setStrokeWidth(6);
-                        l.setStartX(0);
-                        l.setEndX(0);
-                        l.setStartY(0);
-                        l.setEndY(width);
                         pane.getChildren().add(l);
 
                 }
@@ -199,56 +192,48 @@ public class GameController {
     @FXML
     public void handleKeyPressed(KeyEvent keyEvent) {
         KeyCode key = keyEvent.getCode();
-        Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol(),board);
-        switch(key){
-            case A: {
-                if(model.canMoveLeft(model.getGameCell())){
+        Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol());
+        switch (key) {
+            case A -> {
+                if (model.canMoveLeft(model.getGameCell())) {
                     model.moveLeft();
-                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol(),board);
+                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
                     paneNext.getChildren().add(piece);
                     pane.getStyleClass().remove("visited-cell");
                     paneNext.getStyleClass().add("visited-cell");
                 }
             }
-            break;
-            case D: {
-                if(model.canMoveRight(model.getGameCell())){
+            case D -> {
+                if (model.canMoveRight(model.getGameCell())) {
                     model.moveRight();
-                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol(),board);
+                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
                     paneNext.getChildren().add(piece);
                     pane.getStyleClass().remove("visited-cell");
                     paneNext.getStyleClass().add("visited-cell");
                 }
-                break;
             }
-            case W: {
-                if(model.canMoveUp(model.getGameCell())){
+            case W -> {
+                if (model.canMoveUp(model.getGameCell())) {
                     model.moveUp();
-                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol(),board);
+                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
                     paneNext.getChildren().add(piece);
                     pane.getStyleClass().remove("visited-cell");
                     paneNext.getStyleClass().add("visited-cell");
                 }
-                break;
             }
-            case S: {
-                if(model.canMoveDown(model.getGameCell())){
+            case S -> {
+                if (model.canMoveDown(model.getGameCell())) {
                     model.moveDown();
-                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(),model.getGameCell().getCol(),board);
+                    Pane paneNext = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
                     paneNext.getChildren().add(piece);
                     pane.getStyleClass().remove("visited-cell");
                     paneNext.getStyleClass().add("visited-cell");
                 }
-                break;
             }
-
         }
-
-
 
         if(model.hasFinished()){
             System.out.println("Congratulations You Win!");
-            finalScore = (((40/model.getMovesCount()+1) * 50) + (5/ timeTaken.get()+1)*50);
             finalResult.setOutcome(true);
             displayScore();
         }
@@ -272,7 +257,7 @@ public class GameController {
     @FXML
     public void handleResetButton(ActionEvent actionEvent){
         startTime = System.nanoTime();
-        Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol(), board);
+        Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
         pane.getStyleClass().remove("visited-cell");
         resetGameUI();
         initialize();

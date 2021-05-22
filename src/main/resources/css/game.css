@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'VIDEOPHREAK';
-    src: url('fonts/VIDEOPHREAK.ttf');
+    src: url('/fonts/VIDEOPHREAK.ttf');
 }
 
 .game-grid {

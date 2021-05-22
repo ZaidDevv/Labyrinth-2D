@@ -1,10 +1,7 @@
-package labyrinth.controllers;
+// CHECKSTYLE:OFF
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
+package labyrinth.controllers;
 import com.jfoenix.controls.JFXButton;
-import javafx.animation.Animation;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,8 +17,6 @@ import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import labyrinth.jaxb.GameResult;
-
-import javax.swing.border.Border;
 import java.io.File;
 import java.io.IOException;
 import java.util.Timer;

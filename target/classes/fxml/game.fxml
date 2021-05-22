@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.media.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane id="border" fx:id="border" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../css/game.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.GameController">
+<BorderPane id="border" fx:id="border" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../css/game.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.GameController">
    <center>
       <GridPane id="board" fx:id="board" alignment="BASELINE_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="600.0" prefWidth="600.0" styleClass="game-grid" stylesheets="@../css/game.css">
         <columnConstraints>
@@ -101,7 +105,4 @@
          </BorderPane.margin>
       </ImageView>
    </top>
-   <right>
-      <MediaView fx:id="mvLogo" fitHeight="100.0" fitWidth="100.0" BorderPane.alignment="CENTER" />
-   </right>
 </BorderPane>

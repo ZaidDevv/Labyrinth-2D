@@ -1,6 +1,6 @@
 <Configuration status="debug">
     <Properties>
-        <Property name="LOG_PATTERN">%x %d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Property>
+        <Property name="LOG_PATTERN">%d{HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Property>
     </Properties>
     <Appenders>
         <Console name="Console" target="SYSTEM_OUT">
@@ -8,7 +8,6 @@
         </Console>
         <File name="File1" fileName="GameEvents.log" append="true">
             <PatternLayout pattern="${LOG_PATTERN}"/>
-            <MarkerFilter marker="gameResult" onMatch="ACCEPT" onMismatch="DENY"/>
         </File>
     </Appenders>
     <Loggers>
