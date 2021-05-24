@@ -12,19 +12,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.BorderPane;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import javafx.stage.Stage;
 import labyrinth.jaxb.GameResult;
-import java.io.File;
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class HomeController {
-    @FXML
-    MediaView mvLogo;
     @FXML
     JFXButton playButton;
 
@@ -41,10 +33,6 @@ public class HomeController {
 
     @FXML
     public void initialize(){
-        File file = new File(getClass().getClassLoader().getResource("assets/Labyrinth.mp4").getPath());
-        if(file != null) {
-            initMediaPlayer(file);
-        }
         Platform.runLater(new Runnable() {
             @Override
             public void run() {
@@ -53,18 +41,6 @@ public class HomeController {
         });
     }
 
-    public void initMediaPlayer(File file){
-        MediaPlayer mp = new MediaPlayer(new Media(file.toURI().toString()));
-        Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                mp.setAutoPlay(true);
-                mvLogo.setMediaPlayer(mp);
-                mp.cycleCountProperty().set(20);
-            }
-        },0);
-    }
 
     @FXML
     public void handlePlayButton(ActionEvent actionEvent) throws IOException {

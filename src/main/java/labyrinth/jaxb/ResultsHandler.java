@@ -5,17 +5,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * The class that governs the structure of JAXB output
+ * The class that governs the structure of JAXB output.
  */
 
 public class ResultsHandler {
     /**
-     * {@code List} that holds all the {@code GameResult} objects
+     * {@code List} that holds all the {@code GameResult} objects.
      */
     private LeaderboardResults resultList = new LeaderboardResults();
 
     /**
-     * Parameterless constructor that Initializes {@code resultList} and handles JAXB Output file creation
+     * Parameterless constructor that Initializes {@code resultList} and handles JAXB Output file creation.
      */
     public ResultsHandler(){
         File file = new File("gameresult.xml");

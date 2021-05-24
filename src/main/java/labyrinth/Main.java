@@ -1,3 +1,5 @@
+// CHECKSTYLE:OFF
+
 package labyrinth;
 
 import javafx.application.Application;

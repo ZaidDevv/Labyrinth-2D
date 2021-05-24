@@ -15,8 +15,12 @@
 
 }
 
+.game-piece{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 0);
+}
+
 .visited-cell{
-    -fx-background-color: lightgray;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 0);
 }
 
 .border-pane{
@@ -31,6 +35,16 @@
     -fx-background-color: rgb(5,5,5);
     -fx-pref-width: 200;
     -fx-text-fill: WHITE;
+
+}
+
+.LeaderboardsLabel{
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 0);
+    -fx-font-family: 'VIDEOPHREAK';
+    -fx-padding: 0.7em 0.57em;
+    -fx-font-size: 30px;
+    -fx-pref-width: 300;
+    -fx-text-fill: BLACK;
 
 }
 

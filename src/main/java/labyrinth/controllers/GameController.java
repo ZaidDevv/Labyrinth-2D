@@ -25,15 +25,13 @@ import labyrinth.jaxb.GameResult;
 import labyrinth.jaxb.ResultsHandler;
 import labyrinth.model.Cell;
 import labyrinth.model.GameBoardModel;
-import lombok.extern.slf4j.Slf4j;
-import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import java.io.*;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.logging.Logger;
 
-@Slf4j
 public class GameController {
     @FXML
     private GridPane board;
@@ -57,8 +55,7 @@ public class GameController {
     private Circle piece;
     private final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofLocalizedDateTime(FormatStyle.LONG);
     private GameResult finalResult = new GameResult();
-    private final Logger logger = Logger.getLogger(GameController.class.getName());
-
+    private static final Logger logger = LogManager.getLogger("Main");
 
     AnimationTimer timer = new AnimationTimer() {
         @Override
@@ -76,6 +73,7 @@ public class GameController {
 
     @FXML
     public void initialize(){
+        logger.debug("Game is Initializing");
         model = new GameBoardModel();
         initGrid();
         drawWalls();
@@ -84,6 +82,7 @@ public class GameController {
         startTime = System.nanoTime();
         initTimer(timer);
         board.requestFocus();
+        logger.debug("Finished Initialization");
     }
 
     private void initTimer(AnimationTimer timer){
@@ -97,6 +96,7 @@ public class GameController {
         piece.setFill(Color.BLUE);
         piece.setCenterX(referenceCell.getWidth()/2);
         piece.setCenterY(referenceCell.getWidth()/2);
+        piece.getStyleClass().add("game-piece");
         Pane pane = (Pane) getNodeByRowColumnIndex(0, 0);
         pane.getChildren().add(piece);
     }
@@ -231,9 +231,9 @@ public class GameController {
                 }
             }
         }
-
+        logger.debug("Piece has moved to {},{}",model.getGameCell().getRow(),model.getGameCell().getCol());
         if(model.hasFinished()){
-            System.out.println("Congratulations You Win!");
+            logger.info("Congratulations you won!");
             finalResult.setOutcome(true);
             displayScore();
         }
@@ -253,9 +253,11 @@ public class GameController {
                 }
             }
         }
+        finalscoreUI.setVisible(false);
     }
     @FXML
     public void handleResetButton(ActionEvent actionEvent){
+        logger.debug("Resetting Game...");
         startTime = System.nanoTime();
         Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
         pane.getStyleClass().remove("visited-cell");
@@ -265,6 +267,8 @@ public class GameController {
 
     public void displayScore(){
         finalscoreUI.setText("SCORE : " + Math.round(model.getFinalScore()));
+        logger.info("Final Score is {}",model.getFinalScore());
+        finalscoreUI.setVisible(true);
     }
 
     @FXML
@@ -274,6 +278,7 @@ public class GameController {
 
     @FXML
     public void handleLeaderboardsButton(ActionEvent actionEvent) throws IOException {
+        logger.info("Loading Leaderboards...");
         Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
         GameResult result = (GameResult) stage.getUserData();
         finalResult.setName(result.getName());

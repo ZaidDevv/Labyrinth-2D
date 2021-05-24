@@ -11,11 +11,14 @@
 
     <developers>
         <developer>
-            <name>Zaid Hameed</name>
+            <name>Zaid Mohammed Hameed</name>
             <id>Zaid</id>
             <email>zaidbusiness@hotmail.com</email>
         </developer>
     </developers>
+    <scm>
+        <developerConnection>scm:git:https://github.com/ZaidDevv/Labyrinth-2D.git</developerConnection>
+    </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -78,11 +81,6 @@
             <scope>compile</scope>
         </dependency>
 
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-media</artifactId>
-            <version>11.0.1</version>
-        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
@@ -239,7 +237,7 @@
                 <artifactId>maven-checkstyle-plugin</artifactId>
                 <version>3.1.2</version>
                 <configuration>
-                    <configLocation>checkstyle.xml</configLocation>
+                    <configLocation>src/main/resources/checkstyle.xml</configLocation>
                 </configuration>
             </plugin>
             <plugin>

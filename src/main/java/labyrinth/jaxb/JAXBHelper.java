@@ -1,13 +1,9 @@
 package labyrinth.jaxb;
-
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
 import jakarta.xml.bind.Marshaller;
 import jakarta.xml.bind.Unmarshaller;
-
 import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.stream.Collectors;
 
 
 /**
@@ -39,6 +35,15 @@ public class JAXBHelper {
      *
      * @param clazz the class of the object
      * @param is the {@code InputStream} to read from
+     * @return the resulting object
+     * @throws JAXBException if any problem occurs during deserialization
+     */
+
+    /**
+     *
+     * @param clazz the class of the object
+     * @param is the {@code InputStream} to read from
+     * @param <T> Type parameter accepts a generic type
      * @return the resulting object
      * @throws JAXBException if any problem occurs during deserialization
      */

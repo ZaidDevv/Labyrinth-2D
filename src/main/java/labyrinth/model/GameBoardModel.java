@@ -1,25 +1,49 @@
 package labyrinth.model;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
 /**
- * Model class that handles the implementation and logic of the game
+ * Model class that handles the implementation and logic of the game.
  */
-public class GameBoardModel{
+public class
+GameBoardModel{
+    /**
+     * Size of the board.
+     */
     public final int BOARD_SIZE = 12;
+    /**
+     * The board that stores our {@code Cell} objects.
+     */
     private final Cell[][] board = new Cell[BOARD_SIZE][BOARD_SIZE];
+    /**
+     * a {@code Cell} Stack that the IDFS algorithm will use to generate the maze.
+     */
     private final Stack<Cell> cellStack;
+    /**
+     * The current cell where our game piece is located.
+     */
     private Cell gameCell;
-    private Cell goalCell;
+    /**
+     * The goal state that must be reached in order to win the game.
+     */
+    private final Cell goalCell = new Cell(BOARD_SIZE-1,BOARD_SIZE-1);
+    /**
+     * Amount of moves the player has made.
+     */
     private int movesCount;
+    /**
+     * Final score of the game.
+     */
     private double finalScore;
 
-    /**
-     * Parameterless Constructor
-     */
 
+
+    /**
+     * Parameterless Constructor.
+     */
     public GameBoardModel(){
         cellStack = new Stack<>();
         initializeBoard(board);
@@ -28,23 +52,33 @@ public class GameBoardModel{
     }
 
     /**
-     * @return Current count of valid moves
+     * @param gameCell The current game state's piece.
+     */
+    public void setGameCell(Cell gameCell) {
+        if(!checkIndex(gameCell.getRow(),gameCell.getCol())){
+            return ;
+        }
+        this.gameCell = gameCell;
+    }
+
+    /**
+     * @return Current count of valid moves.
      */
     public int getMovesCount() {
         return movesCount;
     }
 
     /**
-     * @return 2D Array of {@code Cell} that represents the game's state
+     * @return 2D Array of {@code Cell} that represents the game's state.
      */
     public Cell[][] getBoard() {
         return board;
     }
 
     /**
-     *  Initializes the {@code board} with {@code Cell} Objects according to {@code BOARD_SIZE}
+     *  Initializes the {@code board} with {@code Cell} Objects according to {@code BOARD_SIZE}.
      *
-     * @param board 2D Array of Cells that represents the game's state
+     * @param board 2D Array of Cells that represents the game's state.
      */
     public void initializeBoard(Cell[][] board){
         for(int i = 0 ; i < BOARD_SIZE;i++){
@@ -52,11 +86,10 @@ public class GameBoardModel{
                 board[i][j] = new Cell(i,j);
             }
         }
-        goalCell = board[BOARD_SIZE-1][BOARD_SIZE-1];
     }
 
     /**
-     * @return Goal game state
+     * @return Goal game state.
      */
 
     public Cell getGoalCell() {
@@ -64,7 +97,7 @@ public class GameBoardModel{
     }
 
     /**
-     * @return Stores current game state
+     * @return Stores current game state.
      */
 
     public Cell getGameCell() {
@@ -72,7 +105,7 @@ public class GameBoardModel{
     }
 
     /**
-     * @return game's final score
+     * @return game's final score.
      */
     public double getFinalScore(){
         return finalScore;
@@ -80,8 +113,8 @@ public class GameBoardModel{
 
     /**
      * determines whether moving upwards is valid.
-     * @param cell
-     * @return {@code true} if the move is legal {@code false} otherwise
+     * @param cell The {@code Cell} containing the {@code piece}.
+     * @return {@code true} if the move is legal {@code false} otherwise.
      */
     public boolean canMoveUp(Cell cell){
         if(cell.getWalls()[0]){
@@ -94,8 +127,8 @@ public class GameBoardModel{
     }
     /**
      * determines whether moving right is valid.
-     * @param cell
-     * @return {@code true} if the move is legal {@code false} otherwise
+     * @param cell The {@code Cell} containing the {@code piece}.
+     * @return {@code true} if the move is legal {@code false} otherwise.
      */
     public boolean canMoveRight(Cell cell){
         if(cell.getWalls()[1]){
@@ -108,8 +141,8 @@ public class GameBoardModel{
     }
     /**
     * determines whether moving downwards is valid.
-     * @param cell
-     * @return {@code true} if the move is legal {@code false} otherwise
+     * @param cell The {@code Cell} containing the {@code piece}.
+     * @return {@code true} if the move is legal {@code false} otherwise.
      */
     public boolean canMoveDown(Cell cell){
         if(cell.getWalls()[2]){
@@ -122,8 +155,8 @@ public class GameBoardModel{
     }
     /**
      * determines whether moving left is valid.
-     * @param cell The {@code Cell} containing the {@code piece}
-     * @return {@code true} if the move is legal {@code false} otherwise
+     * @param cell The {@code Cell} containing the {@code piece}.
+     * @return {@code true} if the move is legal {@code false} otherwise.
      */
     public boolean canMoveLeft(Cell cell){
         if(cell.getWalls()[3]){
@@ -133,46 +166,54 @@ public class GameBoardModel{
     }
 
     /**
-     * Changes the {@code gameCell} to the corresponding direction of the move
+     * Changes the {@code gameCell} to the corresponding direction of the move.
      */
 
     public void moveUp(){
-        gameCell = board[gameCell.getRow() - 1][gameCell.getCol()];
-        movesCount++;
+        if(checkIndex(gameCell.getRow() - 1,gameCell.getCol())) {
+            gameCell = board[gameCell.getRow() - 1][gameCell.getCol()];
+            movesCount++;
+        }
     }
 
     /**
-     * Changes the {@code gameCell} to the corresponding direction of the move
+     * Changes the {@code gameCell} to the corresponding direction of the move.
      */
 
     public void moveRight(){
-        gameCell = board[gameCell.getRow()][gameCell.getCol() + 1];
-        movesCount++;
+        if(checkIndex(gameCell.getRow(),gameCell.getCol() + 1)) {
+            gameCell = board[gameCell.getRow()][gameCell.getCol() + 1];
+            movesCount++;
+        }
     }
 
     /**
-     * Changes the {@code gameCell} to the corresponding direction of the move
+     * Changes the {@code gameCell} to the corresponding direction of the move.
      */
 
     public void moveDown(){
-        gameCell = board[gameCell.getRow() + 1][gameCell.getCol()];
-        movesCount++;
+        if(checkIndex(gameCell.getRow() + 1, gameCell.getCol())) {
+            gameCell = board[gameCell.getRow() + 1][gameCell.getCol()];
+            movesCount++;
+        }
     }
 
     /**
-     * Changes the {@code gameCell} to the corresponding direction of the move
+     * Changes the {@code gameCell} to the corresponding direction of the move.
      */
 
     public void moveLeft(){
-        gameCell = board[gameCell.getRow()][gameCell.getCol() - 1];
-        movesCount++;
+        if (checkIndex(gameCell.getRow(),gameCell.getCol() - 1)) {
+            gameCell = board[gameCell.getRow()][gameCell.getCol() - 1];
+            movesCount++;
+        }
     }
 
     /**
-     *  Checks all the unvisited neighbours and selects a random one
+     *  Checks all the unvisited neighbours and selects a random one.
      *
-     * @param cell The {@code Cell} containing the {@code piece}
-     * @return a random unvisited cell from the list of passed @param cell neighbours
+     * @param cell The {@code Cell} containing the {@code piece}.
+     * @return a random unvisited cell from the list of passed @param cell neighbours.
      */
     public Cell checkNeighbours(Cell cell){
         List<Cell> neighbours = new ArrayList<>();
@@ -191,8 +232,8 @@ public class GameBoardModel{
             neighbours.add(board[row][col - 1]);
         }
 
-        Random r = new Random();
         if(!neighbours.isEmpty()) {
+            Random r = new Random();
             return neighbours.get(r.nextInt(neighbours.size()));
         }
 
@@ -200,12 +241,12 @@ public class GameBoardModel{
     }
 
     /**
-     * Checks if the indices are valid within {@code BOARD_SIZE}
-     * @param i Cell's Row
-     * @param j Cell's Column
-     * @return {@code true} if it is within {@code BOARD_SIZE} {@code false} otherwise
+     * Checks if the indices are valid within {@code BOARD_SIZE}.
+     * @param i Cell's Row.
+     * @param j Cell's Column.
+     * @return {@code true} if it is within {@code BOARD_SIZE} {@code false} otherwise.
      */
-    public Boolean checkIndex(int i,int j){
+    public boolean checkIndex(int i,int j){
         if(i < 0 || j < 0 || i > BOARD_SIZE - 1 || j > BOARD_SIZE - 1){
             return false;
         }
@@ -213,7 +254,7 @@ public class GameBoardModel{
     }
 
     /**
-     *  Iterative deepening algorithm responsible for modifying the walls of each cell to structure the labyrinth
+     *  Iterative deepening algorithm responsible for modifying the walls of each cell to structure the labyrinth.
      */
     public void generateMaze(){
         Cell currentCell = board[0][0];
@@ -249,7 +290,7 @@ public class GameBoardModel{
     }
 
     /**
-     * Determines whether the game has reached its end state
+     * Determines whether the game has reached its end state.
      * @return {@code true} if the player completed the maze {@code false} otherwise.
      */
     public boolean hasFinished(){
@@ -261,12 +302,11 @@ public class GameBoardModel{
     }
 
     /**
-     * Calculates the player's final score
-     * @param steps amount of moves that the player has made in order to complete the game
-     * @return the game's final score
+     * @param steps amount of moves that the player has made in order to complete the game.
+     * @return the game's final score.
      */
     public double calculateScore(int steps){
-        return ((1.0/steps) * 5000);
+        return steps <= 0 ? 0 : ((1.0/steps) * 5000);
     }
 
 }

@@ -9,11 +9,12 @@
    <children>
       <VBox alignment="CENTER" layoutX="20.0" layoutY="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
          <children>
+            <Label styleClass="LeaderboardsLabel" stylesheets="@../css/game.css" text="Leaderboards" textAlignment="CENTER" />
             <TableView fx:id="tvLeaderboard" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="800.0">
               <columns>
                 <TableColumn fx:id="name" maxWidth="-1.0" minWidth="160.0" prefWidth="-1.0" text="Nickname" />
-                <TableColumn fx:id="startDate" maxWidth="-1.0" minWidth="180.0" prefWidth="-1.0" text="Start Date" />
-                  <TableColumn fx:id="outcome" maxWidth="-1.0" minWidth="160.0" prefWidth="-1.0" text="Outcome" />
+                <TableColumn fx:id="startDate" maxWidth="276.0" minWidth="180.0" prefWidth="224.0" text="Start Date" />
+                  <TableColumn fx:id="outcome" maxWidth="154.0" minWidth="64.0" prefWidth="116.0" text="Outcome" />
                   <TableColumn fx:id="score" maxWidth="-1.0" minWidth="160.0" prefWidth="-1.0" text="Score" />
                   <TableColumn fx:id="steps" maxWidth="-1.0" minWidth="160.0" prefWidth="-1.0" resizable="false" text="Steps" />
               </columns>

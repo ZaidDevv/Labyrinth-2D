@@ -11,7 +11,7 @@ import java.util.List;
 
 
 /**
- * Class that stores a {@code List} of {@code GameResult}'s
+ * Class that stores a {@code List} of {@code GameResult}'s.
  */
 
 @AllArgsConstructor
@@ -21,7 +21,7 @@ import java.util.List;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class LeaderboardResults {
     /**
-     * The List that contains {@code GameResult}'s
+     * The List that contains {@code GameResult}'s.
      */
     @XmlElement(name = "result")
     private List<GameResult> gameResultsList;
