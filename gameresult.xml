@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <position>
     <result>
-        <steps>82</steps>
-        <finalScore>60.97560975609756</finalScore>
+        <steps>58</steps>
+        <finalScore>86.20689655172414</finalScore>
         <outcome>true</outcome>
         <name>Test</name>
-        <startDateTime>May 22, 2021 at 8:40:20 PM GMT+02:00</startDateTime>
+        <startDateTime>May 25, 2021 at 4:06:10 PM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>60</steps>
+        <finalScore>83.33333333333333</finalScore>
+        <outcome>true</outcome>
+        <name>.</name>
+        <startDateTime>May 25, 2021 at 4:07:13 PM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>104</steps>
+        <finalScore>48.07692307692308</finalScore>
+        <outcome>true</outcome>
+        <name>efw</name>
+        <startDateTime>May 25, 2021 at 4:50:42 PM GMT+02:00</startDateTime>
     </result>
 </position>

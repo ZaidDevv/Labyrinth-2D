@@ -17,11 +17,11 @@ public class Cell {
     /**
      * Width of each cell.
      */
-    private final double width = 50;
+    private final double width = 100;
     /**
      * Walls surrounding the cell in the following order (top, right, bottom, left).
      */
-    private Boolean[] walls = {true,true,true,true};
+    private Boolean[] walls = {false,false,false,false};
     /**
      * Indicates if the cell been visited by our IDFS or not.
      */

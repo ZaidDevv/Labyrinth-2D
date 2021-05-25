@@ -1,51 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<BorderPane id="border" fx:id="border" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../css/game.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.GameController">
+<BorderPane id="border" fx:id="border" prefHeight="900.0" prefWidth="1100.0" styleClass="border-pane" stylesheets="@../css/game.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="labyrinth.controllers.GameController">
    <center>
-      <GridPane id="board" fx:id="board" alignment="BASELINE_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="600.0" prefWidth="600.0" styleClass="game-grid" stylesheets="@../css/game.css">
+      <GridPane id="board" fx:id="board" alignment="BASELINE_LEFT" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyPressed="#handleKeyPressed" prefHeight="700.0" prefWidth="700.0" styleClass="game-grid" stylesheets="@../css/game.css">
         <columnConstraints>
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="100.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="50.0" prefWidth="50.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="100.0" prefWidth="100.0" />
         </columnConstraints>
-      
+
         <rowConstraints>
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
-            <RowConstraints minHeight="50.0" prefHeight="50.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
+            <RowConstraints minHeight="100.0" prefHeight="100.0" vgrow="ALWAYS" />
         </rowConstraints>
          <BorderPane.margin>
-            <Insets bottom="10.0" left="10.0" right="30.0" top="10.0" />
+            <Insets bottom="5.0" left="10.0" right="30.0" top="10.0" />
          </BorderPane.margin>
       </GridPane>
    </center>

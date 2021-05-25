@@ -8,12 +8,11 @@ import java.util.Stack;
 /**
  * Model class that handles the implementation and logic of the game.
  */
-public class
-GameBoardModel{
+public class GameBoardModel{
     /**
      * Size of the board.
      */
-    public final int BOARD_SIZE = 12;
+    public final int BOARD_SIZE = 7;
     /**
      * The board that stores our {@code Cell} objects.
      */
@@ -29,7 +28,7 @@ GameBoardModel{
     /**
      * The goal state that must be reached in order to win the game.
      */
-    private final Cell goalCell = new Cell(BOARD_SIZE-1,BOARD_SIZE-1);
+    private final Cell goalCell = new Cell(5,2);
     /**
      * Amount of moves the player has made.
      */
@@ -47,8 +46,8 @@ GameBoardModel{
     public GameBoardModel(){
         cellStack = new Stack<>();
         initializeBoard(board);
-        gameCell = board[0][0];
-        generateMaze();
+        gameCell = board[1][4];
+        generateLabyrinth();
     }
 
     /**
@@ -118,8 +117,12 @@ GameBoardModel{
      */
     public boolean canMoveUp(Cell cell){
         if(cell.getWalls()[0]){
-            return false;
+                return false;
         }
+        else if(checkIndex(cell.getRow()-1,cell.getCol())){
+            if(board[cell.getRow()-1][cell.getCol()].getWalls()[2])
+                return false;
+    }
         else if (cell.getRow() - 1 < 0){
             return false;
         }
@@ -133,6 +136,10 @@ GameBoardModel{
     public boolean canMoveRight(Cell cell){
         if(cell.getWalls()[1]){
             return false;
+        }
+        else if(checkIndex(cell.getRow(),cell.getCol() + 1)){
+            if(board[cell.getRow()][cell.getCol() + 1].getWalls()[3])
+                return false;
         }
         else if (cell.getCol() + 1 > BOARD_SIZE - 1){
             return false;
@@ -148,6 +155,10 @@ GameBoardModel{
         if(cell.getWalls()[2]){
             return false;
         }
+        else if(checkIndex(cell.getRow() + 1,cell.getCol())){
+            if(board[cell.getRow()+1][cell.getCol()].getWalls()[0])
+                return false;
+        }
         else if (cell.getRow() + 1 > BOARD_SIZE - 1){
             return false;
         }
@@ -162,7 +173,14 @@ GameBoardModel{
         if(cell.getWalls()[3]){
             return false;
         }
-        else return cell.getCol() - 1 >= 0;
+        else if(checkIndex(cell.getRow(),cell.getCol() - 1)){
+            if(board[cell.getRow()][cell.getCol() - 1].getWalls()[1])
+                return false;
+        }
+        else if(cell.getCol() - 1 < 0){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -171,8 +189,9 @@ GameBoardModel{
 
     public void moveUp(){
         if(checkIndex(gameCell.getRow() - 1,gameCell.getCol())) {
-            gameCell = board[gameCell.getRow() - 1][gameCell.getCol()];
-            movesCount++;
+            while(canMoveUp(gameCell)){
+                gameCell = board[gameCell.getRow() - 1][gameCell.getCol()];
+            }
         }
     }
 
@@ -182,7 +201,9 @@ GameBoardModel{
 
     public void moveRight(){
         if(checkIndex(gameCell.getRow(),gameCell.getCol() + 1)) {
-            gameCell = board[gameCell.getRow()][gameCell.getCol() + 1];
+            while(canMoveRight(gameCell)){
+                gameCell = board[gameCell.getRow()][gameCell.getCol() + 1];
+            }
             movesCount++;
         }
     }
@@ -193,7 +214,9 @@ GameBoardModel{
 
     public void moveDown(){
         if(checkIndex(gameCell.getRow() + 1, gameCell.getCol())) {
-            gameCell = board[gameCell.getRow() + 1][gameCell.getCol()];
+            while(canMoveDown(gameCell)){
+                gameCell = board[gameCell.getRow() + 1][gameCell.getCol()];
+            }
             movesCount++;
         }
     }
@@ -204,7 +227,9 @@ GameBoardModel{
 
     public void moveLeft(){
         if (checkIndex(gameCell.getRow(),gameCell.getCol() - 1)) {
-            gameCell = board[gameCell.getRow()][gameCell.getCol() - 1];
+            while(canMoveLeft(gameCell)){
+                gameCell = board[gameCell.getRow()][gameCell.getCol() - 1];
+            }
             movesCount++;
         }
     }
@@ -307,6 +332,28 @@ GameBoardModel{
      */
     public double calculateScore(int steps){
         return steps <= 0 ? 0 : ((1.0/steps) * 5000);
+    }
+
+    public void generateLabyrinth(){
+        board[0][0].getWalls()[1] = true;
+        board[0][1].getWalls()[3] = true;
+        board[0][2].getWalls()[2] = true;
+        board[0][3].getWalls()[1] = true;
+        board[0][6].getWalls()[2] = true;
+        board[2][1].getWalls()[2] = true;
+        board[2][2].getWalls()[1] = true;
+        board[2][6].getWalls()[3] = true;
+        board[3][3].getWalls()[2] = true;
+        board[3][3].getWalls()[1] = true;
+        board[3][4].getWalls()[1] = true;
+        board[3][6].getWalls()[2] = true;
+        board[4][0].getWalls()[2] = true;
+        board[4][4].getWalls()[2] = true;
+        board[5][2].getWalls()[1] = true;
+        board[5][2].getWalls()[2] = true;
+        board[5][2].getWalls()[3] = true;
+        board[6][3].getWalls()[2] = true;
+        board[6][5].getWalls()[2] = true;
     }
 
 }

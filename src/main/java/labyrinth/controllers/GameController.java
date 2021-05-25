@@ -57,7 +57,7 @@ public class GameController {
     private GameResult finalResult = new GameResult();
     private static final Logger logger = LogManager.getLogger("Main");
 
-    AnimationTimer timer = new AnimationTimer() {
+    private AnimationTimer timer = new AnimationTimer() {
         @Override
         public void handle(long now) {
             timeTaken.set((now - startTime) / 1000000000.0);
@@ -97,7 +97,7 @@ public class GameController {
         piece.setCenterX(referenceCell.getWidth()/2);
         piece.setCenterY(referenceCell.getWidth()/2);
         piece.getStyleClass().add("game-piece");
-        Pane pane = (Pane) getNodeByRowColumnIndex(0, 0);
+        Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
         pane.getChildren().add(piece);
     }
 
@@ -158,29 +158,25 @@ public class GameController {
                 Pane pane = (Pane) getNodeByRowColumnIndex(i,j);
                     if (walls[0]) {
                         Line l = new Line(0,0,width,0);
-                        l.setStrokeWidth(6);
-                        l.setStartX(0);
-                        l.setEndX(width);
-                        l.setStartY(0);
-                        l.setEndY(0);
+                        l.setStrokeWidth(8);
                         pane.getChildren().add(l);
 
                     }
 
                     if (walls[1]) {
                         Line l = new Line(width,0,width,width);
-                        l.setStrokeWidth(6);
+                        l.setStrokeWidth(8);
                         pane.getChildren().add(l);
                     }
                     if (walls[2]) {
                         Line l = new Line(0,width,width,width);
-                        l.setStrokeWidth(6);
+                        l.setStrokeWidth(8);
                         pane.getChildren().add(l);
                     }
 
                     if (walls[3]) {
                         Line l = new Line(0,0,0,width);
-                        l.setStrokeWidth(6);
+                        l.setStrokeWidth(8);
                         pane.getChildren().add(l);
 
                 }
@@ -256,7 +252,7 @@ public class GameController {
         finalscoreUI.setVisible(false);
     }
     @FXML
-    public void handleResetButton(ActionEvent actionEvent){
+    public void handleResetButton(){
         logger.debug("Resetting Game...");
         startTime = System.nanoTime();
         Pane pane = (Pane) getNodeByRowColumnIndex(model.getGameCell().getRow(), model.getGameCell().getCol());
