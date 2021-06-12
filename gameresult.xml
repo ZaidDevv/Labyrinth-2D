@@ -7,4 +7,25 @@
         <name>Test</name>
         <startDateTime>May 22, 2021 at 8:40:20 PM GMT+02:00</startDateTime>
     </result>
+    <result>
+        <steps>98</steps>
+        <finalScore>51.0204081632653</finalScore>
+        <outcome>true</outcome>
+        <name>q</name>
+        <startDateTime>May 30, 2021 at 8:41:26 PM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>37</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>Test</name>
+        <startDateTime>June 6, 2021 at 8:34:39 PM GMT+02:00</startDateTime>
+    </result>
+    <result>
+        <steps>0</steps>
+        <finalScore>0.0</finalScore>
+        <outcome>false</outcome>
+        <name>s</name>
+        <startDateTime>June 13, 2021 at 12:03:18 AM GMT+02:00</startDateTime>
+    </result>
 </position>

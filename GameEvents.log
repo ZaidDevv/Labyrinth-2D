@@ -206,3 +206,253 @@
 16:31:55 [JavaFX Application Thread] INFO  Main - Congratulations you won!
 16:31:55 [JavaFX Application Thread] INFO  Main - Final Score is 104.16666666666666
 16:31:59 [JavaFX Application Thread] INFO  Main - Loading Leaderboards...
+20:41:07 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:41:07 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:41:08 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,0
+20:41:08 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,1
+20:41:09 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+20:41:09 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,0
+20:41:09 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,0
+20:41:09 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,1
+20:41:09 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,2
+20:41:09 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,2
+20:41:09 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,2
+20:41:10 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,3
+20:41:10 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,3
+20:41:10 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,2
+20:41:10 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,2
+20:41:10 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,3
+20:41:10 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,3
+20:41:10 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,2
+20:41:11 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,1
+20:41:11 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,0
+20:41:11 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,0
+20:41:11 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,1
+20:41:11 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,2
+20:41:11 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,2
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,3
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,3
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,3
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,4
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,4
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,4
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,4
+20:41:12 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,4
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,4
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,5
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,5
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,6
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,6
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,6
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,6
+20:41:13 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,6
+20:41:14 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,5
+20:41:14 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,5
+20:41:14 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,6
+20:41:14 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,7
+20:41:14 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,8
+20:41:14 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,9
+20:41:14 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,9
+20:41:15 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,9
+20:41:15 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,10
+20:41:15 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,10
+20:41:15 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,11
+20:41:15 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,11
+20:41:15 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,11
+20:41:15 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,11
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,11
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,11
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,10
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,10
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,10
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,10
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,10
+20:41:16 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,9
+20:41:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,9
+20:41:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,9
+20:41:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,9
+20:41:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,8
+20:41:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,7
+20:41:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,7
+20:41:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,8
+20:41:18 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,8
+20:41:18 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,8
+20:41:18 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,8
+20:41:18 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,7
+20:41:18 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,7
+20:41:18 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,7
+20:41:18 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,8
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,8
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,8
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,9
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,9
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,9
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,8
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,8
+20:41:19 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,7
+20:41:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,7
+20:41:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,6
+20:41:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,6
+20:41:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,6
+20:41:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,6
+20:41:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,5
+20:41:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,5
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,5
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,5
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,5
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,5
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,6
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 10,6
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,6
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,7
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,7
+20:41:21 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,8
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,9
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,10
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,10
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 10,10
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 10,9
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 10,8
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,8
+20:41:22 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,8
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,9
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,9
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,9
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,10
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,10
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,10
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,10
+20:41:23 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,10
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,10
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,10
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,10
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,11
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,11
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 9,11
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 10,11
+20:41:24 [JavaFX Application Thread] DEBUG Main - Piece has moved to 11,11
+20:41:24 [JavaFX Application Thread] INFO  Main - Congratulations you won!
+20:41:24 [JavaFX Application Thread] INFO  Main - Final Score is 51.0204081632653
+20:41:25 [JavaFX Application Thread] INFO  Main - Loading Leaderboards...
+20:43:38 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:43:38 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:44:17 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,0
+20:44:20 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,0
+20:34:25 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:34:25 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:34:25 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,0
+20:34:26 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,0
+20:34:26 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+20:34:26 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,1
+20:34:26 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,2
+20:34:26 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,2
+20:34:26 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,3
+20:34:27 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,3
+20:34:27 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,4
+20:34:27 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,5
+20:34:27 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,5
+20:34:27 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,5
+20:34:27 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,6
+20:34:27 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,6
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,7
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,7
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,7
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,7
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,8
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,8
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,8
+20:34:28 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,7
+20:34:29 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,6
+20:34:29 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,6
+20:34:29 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,5
+20:34:29 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,4
+20:34:29 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,4
+20:34:29 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,3
+20:34:30 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,2
+20:34:30 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,1
+20:34:30 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,0
+20:34:30 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,0
+20:34:30 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,0
+20:34:31 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:34:31 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:34:31 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:34:31 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:34:31 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:34:31 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:34:32 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:34:32 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:34:32 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:34:32 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:34:32 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:34:32 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:34:33 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:34:33 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:34:33 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:34:33 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,0
+20:34:33 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,0
+20:34:33 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,1
+20:34:34 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+20:34:34 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,0
+20:34:34 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,0
+20:34:34 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,1
+20:34:34 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,2
+20:34:34 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,2
+20:34:34 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,2
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,3
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,3
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,3
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,4
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,4
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,5
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,6
+20:34:35 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,7
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,8
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,9
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 0,9
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,9
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,8
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,8
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,7
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,6
+20:34:36 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,6
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,6
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,6
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,7
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,7
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,8
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,8
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,8
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 2,9
+20:34:37 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,9
+20:34:38 [JavaFX Application Thread] DEBUG Main - Piece has moved to 3,10
+20:34:38 [JavaFX Application Thread] DEBUG Main - Piece has moved to 4,10
+20:34:38 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,10
+20:34:38 [JavaFX Application Thread] DEBUG Main - Piece has moved to 5,11
+20:34:38 [JavaFX Application Thread] DEBUG Main - Piece has moved to 6,11
+20:34:38 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,11
+20:34:38 [JavaFX Application Thread] DEBUG Main - Piece has moved to 7,11
+20:34:39 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,11
+20:34:39 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,10
+20:34:39 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,9
+20:34:39 [JavaFX Application Thread] DEBUG Main - Piece has moved to 8,9
+20:34:39 [JavaFX Application Thread] INFO  Main - Loading Leaderboards...
+20:35:04 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:35:04 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:35:04 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:35:04 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:35:04 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:35:05 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:35:05 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:35:05 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:35:05 [JavaFX Application Thread] DEBUG Main - Resetting Game...
+20:35:05 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+20:35:05 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+20:35:05 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,0
+20:35:05 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+20:35:05 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+20:35:06 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+20:35:06 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+20:35:06 [JavaFX Application Thread] DEBUG Main - Piece has moved to 1,1
+00:03:17 [JavaFX Application Thread] DEBUG Main - Game is Initializing
+00:03:17 [JavaFX Application Thread] DEBUG Main - Finished Initialization
+00:03:18 [JavaFX Application Thread] INFO  Main - Loading Leaderboards...
